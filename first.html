@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+ 
+  <head>
+    <title>Alzheimer</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="../static/css/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="../static/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../static/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="../static/fonts/flaticon/font/flaticon.css">
+    <link rel="stylesheet" href="../static/css/aos.css">
+
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="../static/css/styles.css">
+
+  <style>
+    *{
+      padding: 0px;
+      box-sizing: border-box;
+      margin: 0;
+    }
+a{
+  
+  text-decoration: none;
+  color: inherit;
+}
+
+    .home-section{
+      
+      height: 100vh;;
+    }
+    nav{
+      
+      display: flex;
+      height: 80px;
+      align-items: center;
+      padding: 0px 80px;
+     margin-top: 40px;
+      justify-content: space-between;
+
+    color: white;
+      position: absolute;
+      left: 0px;
+      right: 0px;
+      top: 0px;
+      z-index: 9;
+      
+
+    }
+    nav .logo h1{
+      font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+      font-size: 2.5rem;
+      color: white;
+
+
+    }
+    nav .nav_container {
+      flex: 1;
+      display: flex; 
+      padding: 0px 30px;
+      align-items: center!important;
+      margin-bottom: 0px;
+      justify-content: end;
+    }
+    nav .nav_container  ul{
+      
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin: 0px;
+
+    }
+
+    nav .nav_container  ul li{
+      font-size: 1.3rem;
+      list-style-type:none;
+      transition: background ease .3s;
+      border-radius: 30px;
+      font-style: normal;
+
+    
+    }
+  
+
+    nav .nav_container  ul li:hover {
+      background-color: gray;
+      transform: scale(0.8);
+      color: white!important;
+    
+
+    
+    }
+    nav .nav_container  ul li a:hover{
+      color: white;
+    }
+
+  
+
+    nav .nav_container  ul li a:active{
+      color:blue;
+    }
+
+    .text-white{
+      font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+      font-size: 2rem!important;
+      font-size: 2rem
+
+    }
+
+    .active{
+      color: blue;
+    }
+    .get-started{
+      padding: 10px 20px;
+      background-color: rgb(87, 122, 220);
+      color: white;
+      border: 20px;
+      text-align: center;
+      border: none;
+      border-radius: 20px;
+      margin: 30px;
+      width: 200px;
+      font-size: 1.3rem;
+      transition: all ease 600ms;
+      box-shadow: 0px 0px 20px 5px black;
+    }
+  .get-started:hover{
+    transform: scale(0.8);
+  }
+  </style>
+
+  </head>
+
+  <body>
+
+
+
+    
+    <div class="site-wrap" id="home-section">
+
+      <nav>
+        <div class="logo">
+          <h1>
+            Alzheimer's Classification
+          </h1>
+        </div>
+        <div class="nav_container">
+          <ul class="ul">
+        
+
+
+
+            <li><a href="{{ url_for('first') }}"  class="nav-link {% if active_page == 'first' %} active{% endif %}">Home</a></li>
+            <li><a href="{{ url_for('about') }}"  class="nav-link {% if active_page == 'about' %} active{% endif %} ">About</a></li>
+            <li><a href="{{ url_for('preview') }}"  class="nav-link {% if active_page == 'preview'%} active{% endif %} ">Preview</a></li>
+          </ul>
+        </div>
+        </nav>
+
+      <!-- <header class="site-navbar site-navbar-target" role="banner">
+
+        <div class="container">
+          <div class="row align-items-center position-relative">
+
+            <div class="col-3">
+              <div class="site-logo">
+                <a href="index.html">Alzheimer's Classification<span class="text-primary">.</span> </a>
+              </div>
+            </div>
+
+            <div class="col-9 text-right">
+              
+              <span class="d-inline-block d-lg-none"><a href="#" class=" site-menu-toggle js-menu-toggle py-5 "><span class="icon-menu h3 text-white"></span></a></span>
+
+              <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
+                <ul class="site-menu main-menu js-clone-nav ml-auto ">
+                  <li class="active"><a href="{{url_for('first')}}" class="nav-link">Home</a></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </nav>
+            </div>
+
+            
+          </div>
+        </div>
+
+      </header> -->
+
+      
+      <div class="hero" style="background-image: url('../static/images/hero_bg_1.jpg');">
+        
+        <div class="container">
+          <div class="row align-items-center justify-content-center">
+            <div class="col-lg-8 intro text-center">
+              <h1 id="text" class="text-white"></h1>
+
+              <!-- <h1 class="text-white">"Welcome to our Alzheimer's Disease Classification Project Website. Explore how machine learning techniques are utilized to classify Alzheimer's disease with high accuracy."</h1> -->
+         <a href="{{url_for('preview')}}">
+          <button class="get-started">Get started</button>
+                 
+
+        </div>
+         </a>
+          </div>
+        </div>
+      </div>
+
+      
+      
+      
+      
+    
+
+    </div>
+
+    <script src="../static/js/jquery-3.3.1.min.js"></script>
+    <script src="../static/js/popper.min.js"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
+    <script src="../static/js/owl.carousel.min.js"></script>
+    <script src="../static/js/jquery.sticky.js"></script>
+    <script src="../static/js/jquery.waypoints.min.js"></script>
+    <script src="../static/js/jquery.animateNumber.min.js"></script>
+    <script src="../static/js/jquery.fancybox.min.js"></script>
+    <script src="../static/js/jquery.easing.1.3.js"></script>
+    <script src="../static/js/bootstrap-datepicker.min.js"></script>
+    <script src="../static/js/aos.js"></script>
+
+    <script src="../static/js/main.js"></script>
+
+
+
+
+
+    <script>
+    
+    const textElement = document.getElementById('text');
+
+function typeWriter(text, index) {
+    if (index < text.length) {
+        textElement.innerHTML += text.charAt(index);
+        setTimeout(() => typeWriter(text, index +1 ), 50); // Adjust typing speed here
+    }
+}
+
+function startTyping(text) {
+    textElement.innerHTML = ''; // Clear existing text
+    typeWriter(text, 0);
+}
+
+// Example usage
+const textToType = "Welcome to our Alzheimer's Disease Classification Project Website. Explore how machine learning techniques are utilized to classify Alzheimer's disease with high accuracy.";
+startTyping(textToType);
+
+
+
+  
+
+    </script>
+
+  </body>
+
+</html>
+

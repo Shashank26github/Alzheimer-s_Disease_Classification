@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0px;
+        box-sizing: border-box;
+        margin: 0px;
+      }
+      .about {
+        padding-top: 150px;
+        background: url("https://img.freepik.com/free-photo/blue-smooth-wall-textured-background_53876-106133.jpg?t=st=1714292282~exp=1714292882~hmac=8fb979e2d9f397b02eba1d618fd917fce33bbcd9d314353e5f67ece176392ad1")
+          center/cover no-repeat;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      h1 {
+        font-size: 3rem;
+        text-align: center;
+        font-weight: 800;
+        color: rgb(8, 224, 198);
+      }
+      .content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+      }
+      .top {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .top .top_item {
+        border-radius: 20px;
+        padding: 40px;
+        width: 30%;
+        background-color: antiquewhite;
+
+        display: flex;
+        transition: all ease 1000ms;
+        gap: 30px;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      .top .top_item:hover {
+        background-color: rgb(182, 244, 241);
+        transform: scale(0.9);
+      }
+
+      .top .top_item p {
+        font-size: 1.2rem;
+        line-height: 30px;
+        color: black;
+      }
+
+      .top .top_item h3 {
+        color: orange;
+        font-size: 2rem;
+        text-align: center;
+      }
+
+      .bottom {
+        display: grid;
+        grid-template-columns: repeat(2, 500px);
+        justify-content: center;
+        gap: 30px;
+      }
+      .bottom .bottom_items {
+        padding: 30px;
+        flex-basis: 30%;
+        transition: all ease 1000ms;
+        background-color: rgb(253, 247, 249);
+        border-radius: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: start;
+        flex-direction: column;
+        gap: 18px;
+      }
+
+      .bottom .bottom_items:hover {
+        background-color: rgb(218, 183, 241);
+        transform: scale(0.9);
+      }
+      .bottom .bottom_items p {
+        font-size: 1.2rem;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .home-section {
+        height: 100vh;
+      }
+      nav {
+        display: flex;
+        height: 80px;
+        align-items: center;
+        padding: 0px 80px;
+        margin-top: 40px;
+        justify-content: space-between;
+
+        color: white;
+        position: absolute;
+        left: 0px;
+        right: 0px;
+        top: 0px;
+        z-index: 9;
+      }
+      nav .logo h1 {
+        font-size: 2.5rem;
+        color: white;
+      }
+      nav .nav_container {
+        flex: 1;
+        display: flex;
+        padding: 0px 30px;
+        align-items: center !important;
+        margin-bottom: 0px;
+        justify-content: end;
+      }
+      nav .nav_container ul {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        margin: 0px;
+      }
+
+      nav .nav_container ul li {
+        font-size: 1.3rem;
+        list-style-type: none;
+        transition: all ease 0.3s;
+        border-radius: 30px;
+        padding: 10px;
+      }
+
+      nav .nav_container ul li:hover {
+        background-color: gray;
+        transform: scale(0.8);
+        color: white !important;
+      }
+      nav .nav_container ul li a:hover {
+        color: white;
+      }
+
+      nav .nav_container ul li a:active {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">
+        <h1>Alzheimer's Classification</h1>
+      </div>
+      <div class="nav_container">
+        <ul class="ul">
+          <li>
+            <a
+              href="{{ url_for('first') }}"
+              class="nav-link {% if active_page == 'first' %} active{% endif %}"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              href="{{ url_for('about') }}"
+              class="nav-link {% if active_page == 'about' %} active{% endif %}"
+              >About</a
+            >
+          </li>
+          <li>
+            <a
+              href="{{ url_for('preview') }}"
+              class="nav-link {% if active_page == 'preview'%} active{% endif %}"
+              >Preview</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="about">
+      <h1>About </h1>
+      <div class="content">
+        <div class="top">
+          <div class="top_item">
+            <h3>Project Description</h3>
+            <div class="top_content">
+              <p>
+                Alzheimer's disease is a progressive neurodegenerative disorder
+                that primarily affects memory, thinking skills, and behavior. It
+                is the most common cause of dementia, a syndrome characterized
+                by a decline in cognitive function severe enough to interfere
+                with daily life.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="bottom">
+          <div class="bottom_items">
+
+<p>
+              <strong>Non-Demented</strong>: Individuals in this stage exhibit
+              normal </p>
+            <p>cognitive function, with no signs of memory loss</p>
+             <p> impairment in thinking skills.are able to perform daily</p>
+              <p> tasks independently and engage in social activities</p> <p>without
+                difficulty.</p>
+          </div>
+
+          <div class="bottom_items">
+            <p>
+              <strong>Very Mild Demented (Stage 1)</strong>: Individuals in <p> stage exhibit
+              normal cognitive function, with no signs of</p><p>memory loss impairment in thinking skills.are able to </p><p> daily
+              tasks independently and engage in social activities</p> <p>without
+                difficulty.</p>
+            </p>
+          </div>
+          <div class="bottom_items">
+            <p><strong>Mild Demented (Stage 2):</strong>
+              Individuals in this stage may</p><p> start to exhibit mild cognitive decline. While they can </p><p> still perform daily tasks independently, they may begin </p><p> to  experience occasional memory lapses and subtle </p><p>changes in thinking skills.</p>
+            </p>
+
+          </div>
+          <div class="bottom_items">
+            <p>
+              <strong>Moderate Demented (Stage 3 ):</strong>
+
+At this stage, cognitive</p><p> decline becomes more noticeable and pronounced.</p><p> Individuals may experience moderate memory loss,</p> <p> including forgetting recent events or important personal</p><p> information.
+            </p>
+            </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
